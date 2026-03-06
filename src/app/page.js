@@ -4,6 +4,8 @@ import WeekDisplay from '@/components/WeekDisplay';
 import WeekControls from '@/components/WeekControls';
 import { babySizes } from '@/data/babyData';
 import ProgressBar from '@/components/ProgressBar';
+import BabyFactCard from "../components/BabyFactCard";
+import { babyFacts } from "../data/babyFacts";
 
 export default function Home() {
   const [week, setWeek] = useState(16);
@@ -17,6 +19,7 @@ export default function Home() {
       <WeekDisplay week={week} babySize={babySizes[week] || "Growing!"} />
 
       <ProgressBar week={week} />
+      <BabyFactCard week={week} fact={babyFacts[week]} />
 
       <WeekControls week={week} setWeek={setWeek} />
       
